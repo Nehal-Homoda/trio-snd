@@ -1,0 +1,265 @@
+@use './../abstracts' as *;
+
+
+
+.text-gradient {
+    background: -webkit-linear-gradient(#fff, #000) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.bg-gradient {
+    background: linear-gradient(#fff, #000) !important;
+}
+
+
+.base-description {
+    color: rgb(var(--v-theme-brand-color-text-default));
+    font-size: 16px;
+    
+}
+
+
+.opacity {
+    opacity: 0.5;
+
+    &.o-25 {
+        opacity: 0.25 !important;
+    }
+
+    &.o-50 {
+        opacity: 0.50 !important;
+    }
+
+    &.o-75 {
+        opacity: 0.75 !important;
+    }
+}
+
+.z-index {
+    z-index: 1;
+
+    &.index-2 {
+        z-index: 2;
+    }
+
+    &.index-3 {
+        z-index: 3;
+    }
+
+    &.index-4 {
+        z-index: 4;
+    }
+
+    &.index-5 {
+        z-index: 5;
+    }
+
+    &.index-6 {
+        z-index: 6;
+    }
+
+    &.index-7 {
+        z-index: 7;
+    }
+
+    &.index-8 {
+        z-index: 8;
+    }
+
+    &.index-9 {
+        z-index: 9;
+    }
+
+    &.index-10 {
+        z-index: 10;
+    }
+
+    &.index-99 {
+        z-index: 99;
+    }
+
+    &.index-99999 {
+        z-index: 99999 !important;
+    }
+}
+
+.m-up {
+    margin-top: -3rem;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+
+.img-contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flex-center {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.card-overlay {
+    width: 100%;
+    height: 100%;
+    // background: radial-gradient(transparent, $secondary-darken);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
+
+    &.o-10 {
+        opacity: 1;
+    }
+
+    @for $i from 1 through 9 {
+        &.o-#{$i} {
+            opacity: calc($i / 10);
+        }
+    }
+}
+
+.font-size-xx-small {
+    font-size: xx-small !important;
+}
+
+.font-size-x-small {
+    font-size: x-small !important;
+}
+
+.font-size-small {
+    font-size: small !important;
+}
+.font-size-regular{
+font-size: 14px !important;
+}
+
+.font-size-medium {
+    font-size: medium !important;
+}
+
+.font-size-large {
+    font-size: large !important;
+}
+
+.font-size-x-large {
+    font-size: x-large !important;
+}
+
+.font-size-xx-large {
+    font-size: xx-large !important;
+}
+.font-weight-semibold{
+font-weight: 600 !important;
+}
+
+.transition {
+
+    transition: all 150ms ease-in-out;
+
+    @for $i from 1 through 10 {
+        &.duration-#{$i}00 {
+            transition-duration: #{$i}00ms;
+        }
+    }
+}
+
+.fade {
+    animation: fade 300ms ease-in-out;
+}
+
+.gradient-btn {
+    // background: linear-gradient(to right, $secondary-lighten, $secondary);
+}
+
+.truncate {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+
+    @for $i from 1 through 5 {
+
+        &.line-#{$i} {
+            -webkit-line-clamp: $i !important;
+        }
+    }
+}
+
+.borderd-card {
+    // box-shadow: 0 0 0 1px $secondary;
+}
+
+.rounded-regular {
+    border-radius: 1rem !important;
+}
+
+.elevation-light {
+    box-shadow: 2px 2px 15px #0000003b !important;
+}
+
+a {
+    text-decoration: none !important;
+    // color: $brand-color-text-default;
+
+    // &:hover {
+    //     text-decoration: underline;
+    // }
+
+    &.no-decoration {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+
+a.router-link-active {
+    font-weight: bold;
+}
+
+/* exact link will show the primary color for only the exact matching link */
+a.router-link-exact-active {
+
+    color: inherit;
+}
+
+
+
+.my-input {
+    &.v-input {
+        .v-input__slot {
+            border-radius: 100px !important;
+        }
+    }
+
+    .v-field--variant-solo,
+    .v-field--variant-solo-filled {
+        // background-color: $primary;
+    }
+
+}
+
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 200ms ease-in-out;
+}

@@ -1,0 +1,26 @@
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+
+
+
+@mixin media-breakpoint-up($breakpoint) {
+
+    @if map-has-key($grid-breakpoints, $breakpoint) {
+
+        @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+            @content;
+        }
+
+    } @else {
+        @error "Unknown breakpoint #{$breakpoint}. Please use one of: #{map-keys($grid-breakpoints)}.";
+    }
+}
